@@ -1,1 +1,22 @@
-<p>clients-list works!</p>
+<h1>CLIENTES</h1>
+
+<section class="list-section">
+  <div class="controllers">
+    <div class="filter">
+      <div class="input-box">
+        <label class="input-box__label" for="filter">Contrato:</label>
+        <input class="input-box__input" type="text" name="filter" id="filter" />
+      </div>
+
+      <button class="search-button">
+        <img src="../../../assets/search.svg" alt="Search" srcset="" />
+      </button>
+    </div>
+
+    <div class="add-button">
+      <app-custom-button [buttonStyle]="'primary'" [buttonWidth]="'column'">
+        Adicionar Cliente
+      </app-custom-button>
+    </div>
+  </div>
+</section>
