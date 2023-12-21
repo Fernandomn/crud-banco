@@ -1,1 +1,123 @@
-<p>clients-form works!</p>
+<section class="container form-container">
+  <header>
+    <h1>{{ isCreatingClient ? "Criar" : "Atualizar" }} cliente</h1>
+  </header>
+
+  <form [formGroup]="form" *ngIf="form">
+    <label for="clientName">Nome Cliente</label>
+    <input
+      type="text"
+      name="clientName"
+      id="clientName"
+      formControlName="clientName"
+    />
+    <div
+      class="error-message"
+      *ngIf="form.get('clientName')?.errors?.['required'] && form.get('clientName')?.touched"
+    >
+      Nome Cliente é obrigatório
+    </div>
+    <div
+      class="error-message"
+      *ngIf="form.get('clientName')?.errors?.['pattern'] && form.get('clientName')?.touched"
+    >
+      São necessários pelo menos dois nomes
+    </div>
+
+    <label for="cpf">CPF</label>
+    <input type="text" name="cpf" id="cpf" formControlName="cpf" />
+    <div
+      class="error-message"
+      *ngIf="form.get('cpf')?.errors && form.get('cpf')?.touched"
+    >
+      CPF é obrigatório
+    </div>
+
+    <label for="birthDate">Data Nascimento</label>
+    <input
+      type="date"
+      name="birthDate"
+      id="birthDate"
+      formControlName="birthDate"
+    />
+    <div
+      class="error-message"
+      *ngIf="form.get('birthDate')?.errors && form.get('birthDate')?.touched"
+    >
+      Data Nascimento é obrigatória
+    </div>
+
+    <label for="monthlyIncome">Renda Mensal</label>
+    <input
+      type="number"
+      name="monthlyIncome"
+      id="monthlyIncome"
+      formControlName="monthlyIncome"
+    />
+    <div
+      class="error-message"
+      *ngIf="
+        form.get('monthlyIncome')?.errors && form.get('monthlyIncome')?.touched
+      "
+    >
+      Renda Mensal é obrigatória
+    </div>
+
+    <label for="email">E-mail</label>
+    <input type="email" name="email" id="email" formControlName="email" />
+    <div
+      class="error-message"
+      *ngIf="
+        form.get('email')?.errors?.['required'] && form.get('email')?.touched
+      "
+    >
+      E-mail é obrigatório
+    </div>
+    <div
+      class="error-message"
+      *ngIf="
+        form.get('email')?.errors?.['email'] && form.get('email')?.touched
+      "
+    >
+      Formato de e-mail errado
+    </div>
+
+    <label for="registrationDate">Data Cadastro</label>
+    <input
+      type="date"
+      name="registrationDate"
+      id="registrationDate"
+      formControlName="registrationDate"
+    />
+    <div
+      class="error-message"
+      *ngIf="
+        form.get('registrationDate')?.errors &&
+        form.get('registrationDate')?.touched
+      "
+    >
+      Data Cadastro é obrigatória
+    </div>
+  </form>
+
+  <div class="controlls">
+    <!-- <app-custom-button [buttonStyle]="'secondary'" [buttonWidth]="'columns'">
+      Cancelar
+    </app-custom-button> -->
+    <button class="button secondary columns">Cancelar</button>
+    <!-- <app-custom-button
+      [buttonStyle]="'primary'"
+      [buttonWidth]="'columns'"
+      [disabled]="form && (!form.valid || !form.touched)"
+      (onClick)="saveClient()"
+    >
+  </app-custom-button> -->
+    <button
+      class="button primary columns"
+      [disabled]="form && (!form.valid || !form.touched)"
+      (click)="saveClient()"
+    >
+      {{ isCreatingClient ? "Criar" : "Atualizar" }}
+    </button>
+  </div>
+</section>

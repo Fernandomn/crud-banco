@@ -27,23 +27,59 @@ h2 {
   font-size: 36px;
 }
 
-// @import "styles/variables";
-// @import './styles/_breakpoints';
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  height: 40px;
+  font-size: 14px;
+  font-weight: $weight-bold;
 
-// .container {
-//   padding: 50px $padding-horizontal;
-//   @media (max-width: $desktop_xsm) {
-//     padding: 50px $padding-horizontal-mobile;
-//   }
-//   @media (min-width: $desktop_xsm) and (max-width: $desktop_sm) {
-//     padding: 50px $padding-horizontal-sm;
-//   }
-//   @media (min-width: $desktop_sm) and (max-width: $desktop_md) {
-//     padding: 50px $padding-horizontal-md;
-//   }
-// }
-// .titulo {
-//   color: $dark;
-//   font-size: 3rem;
-//   margin-bottom: 30px;
-// }
+  &.full-width {
+    width: 304px;
+  }
+  &.columns {
+    width: 146px;
+  }
+  &.content {
+    width: 92px;
+  }
+
+  &.primary {
+    background-color: $color-brand-primary-medium;
+    color: $color-neutral-white;
+
+    &:hover {
+      background-color: $color-brand-primary-light;
+    }
+    &:focus {
+      background-color: $color-feedback-info-medium;
+    }
+    &:active {
+      background-color: $color-brand-primary-darkest;
+    }
+    &:disabled {
+      background-color: $color-neutral-lightest;
+      color: $color-neutral-medium;
+    }
+  }
+  &.secondary {
+    background-color: $color-support-02-medium;
+    color: $color-brand-primary-medium;
+
+    &:hover {
+      background-color: $color-support-02-dark;
+    }
+    &:focus {
+      background-color: $color-support-02-medium;
+    }
+    &:active {
+      background-color: $color-support-02-dark;
+    }
+    &:disabled {
+      background-color: $color-neutral-lightest;
+      color: $color-neutral-medium;
+    }
+  }
+}

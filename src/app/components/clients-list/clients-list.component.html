@@ -5,7 +5,13 @@
     <div class="filter">
       <div class="input-box">
         <label class="input-box__label" for="filter">Contrato:</label>
-        <input class="input-box__input" type="text" name="filter" id="filter" />
+        <input
+          class="input-box__input"
+          type="text"
+          name="filter"
+          id="filter"
+          [(ngModel)]="filter"
+        />
       </div>
 
       <button class="search-button">
@@ -14,9 +20,42 @@
     </div>
 
     <div class="add-button">
-      <app-custom-button [buttonStyle]="'primary'" [buttonWidth]="'column'">
+      <button class="button primary columns" routerLink="/create-clients">
         Adicionar Cliente
-      </app-custom-button>
+      </button>
     </div>
+  </div>
+
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Nome Cliente</th>
+          <th>CPF</th>
+          <th>Data Cadastro</th>
+          <th>Renda Mensal</th>
+          <th>E-mail</th>
+          <th>Data Cadastro</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let client of clientsList">
+          <td>
+            <a (click)="gotToUpdateClient(client)">{{ client.clientName }}</a>
+          </td>
+          <td>{{ client.cpf }}</td>
+          <td>{{ client.birthDate }}</td>
+          <td>{{ client.monthlyIncome }}</td>
+          <td>{{ client.email }}</td>
+          <td>{{ client.registrationDate }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <nav>
+      <ul class="pagination">
+        <li class="page-item"></li>
+      </ul>
+    </nav>
   </div>
 </section>
