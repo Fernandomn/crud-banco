@@ -1,0 +1,21 @@
+<div class="modal modal-container mat-dialog-content">
+  <img
+    class="modal__icon"
+    src="../../../../assets/{{ data.modalIcon }}.svg"
+    alt="{{ data.modalIcon }}"
+    srcset=""
+  />
+
+  <p class="modal__text">{{ data.text }}</p>
+
+  <div class="modal__buttons">
+    <button
+      *ngIf="data.enableCancel"
+      class="button columns secondary"
+      (click)="cancel()"
+    >
+      Cancelar
+    </button>
+    <button class="button columns primary" (click)="confirm()">OK</button>
+  </div>
+</div>

@@ -36,18 +36,27 @@
           <th>Renda Mensal</th>
           <th>E-mail</th>
           <th>Data Cadastro</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let client of clientsList">
           <td>
-            <a (click)="gotToUpdateClient(client)">{{ client.clientName }}</a>
+            <a (click)="goToUpdateClient(client)">{{ client.clientName }}</a>
           </td>
           <td>{{ client.cpf }}</td>
           <td>{{ client.birthDate }}</td>
           <td>{{ client.monthlyIncome }}</td>
           <td>{{ client.email }}</td>
           <td>{{ client.registrationDate }}</td>
+          <td>
+            <button
+              class="button secondary content"
+              (click)="removeClient(client)"
+            >
+              Remover
+            </button>
+          </td>
         </tr>
       </tbody>
     </table>

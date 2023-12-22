@@ -1,0 +1,13 @@
+@import "../../../../styles/colors";
+
+.modal {
+  width: 382px;
+  height: 286px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+
+  padding: 60px 80px;
+  border-radius: 60px 0px 60px 60px;
+  background: $color-neutral-white;
+}

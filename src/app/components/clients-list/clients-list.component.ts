@@ -1,8 +1,10 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
 import { ClientService } from '../../services/client.service';
 import { Client } from '../../types/client';
+import { AlertModalComponent } from '../common/alert-modal/alert-modal.component';
 
 @Component({
   selector: 'app-clients-list',
@@ -16,7 +18,11 @@ export class ClientsListComponent implements OnInit, OnDestroy {
   private currentPage = 1;
   private $onDestroy = new Subject<boolean>();
 
-  constructor(private clientService: ClientService, private router: Router) {
+  constructor(
+    private clientService: ClientService,
+    private router: Router,
+    public dialog: MatDialog
+  ) {
     this.$onDestroy.next(false);
   }
 
@@ -29,8 +35,41 @@ export class ClientsListComponent implements OnInit, OnDestroy {
     this.$onDestroy.complete();
   }
 
-  gotToUpdateClient(client: Client): void {
+  goToUpdateClient(client: Client): void {
     this.router.navigate([`/edit-clients/${client.id}`]);
+  }
+
+  removeClient(client: Client) {
+    const dialogRef = this.dialog.open(AlertModalComponent, {
+      maxWidth: '400px',
+      data: {
+        modalIcon: 'circle-alert',
+        enableCancel: true,
+        text: `Deseja realmente remover o usuário ${client.clientName}?`,
+      },
+    });
+
+    dialogRef.afterClosed().subscribe((modalResult) => {
+      if (modalResult) {
+        this.clientService
+          .deleteClient(client.id)
+          .pipe(takeUntil(this.$onDestroy))
+          .subscribe((deleteResult) => {
+            if (deleteResult) {
+              this.dialog.open(AlertModalComponent, {
+                data: {
+                  modalIcon: 'circle-tick',
+                  enableCancel: false,
+                  text: `Usuário removido com sucesso!`,
+                },
+              });
+              this.clientsList = this.clientsList.filter(
+                (item) => item.id !== client.id
+              );
+            }
+          });
+      }
+    });
   }
 
   private loadMoreClients(): void {

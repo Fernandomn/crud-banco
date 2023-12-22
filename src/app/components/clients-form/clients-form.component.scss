@@ -33,4 +33,10 @@
       margin: 0.5rem 0 2rem;
     }
   }
+
+  .form__buttons {
+    display: flex;
+    width: 100%;
+    justify-content: right;
+  }
 }
