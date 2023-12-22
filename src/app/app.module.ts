@@ -19,6 +19,7 @@ import { AlertModalComponent } from './components/common/alert-modal/alert-modal
 import { HeaderComponent } from './components/common/header/header.component';
 import { CardComponent } from './components/common/card/card.component';
 import { PaginatorComponent } from './components/common/paginator/paginator.component';
+import { InputErrorsListComponent } from './components/common/input-errors-list/input-errors-list.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { PaginatorComponent } from './components/common/paginator/paginator.comp
     AlertModalComponent,
     CardComponent,
     PaginatorComponent,
+    InputErrorsListComponent,
   ],
   imports: [
     BrowserModule,

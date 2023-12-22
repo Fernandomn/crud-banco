@@ -15,3 +15,8 @@ export interface TableHeader {
   key: string;
   sort?: undefined | 'asc' | 'desc';
 }
+
+export interface ErrorWrapper {
+  errorMessage: string;
+  shouldDisplayError: boolean;
+}

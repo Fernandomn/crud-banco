@@ -1,0 +1,6 @@
+<ng-container *ngFor="let error of errorsMessagesList">
+  <div class="error-message" *ngIf="error.shouldDisplayError">
+    <img src="../../../../assets/alert.svg" alt="Alert" />
+    {{ error.errorMessage }}
+  </div>
+</ng-container>
