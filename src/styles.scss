@@ -21,11 +21,22 @@ button {
 h1 {
   font-weight: $weight-extrabold;
   font-size: 36px;
+  text-transform: uppercase;
+  color: $color-neutral-darkest;
+  font-style: normal;
 }
 
 h2 {
   font-weight: $weight-bold;
-  font-size: 36px;
+  font-size: 34px;
+  font-style: normal;
+  line-height: 130%;
+}
+
+p {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: $weight-regular;
 }
 
 a {
@@ -48,6 +59,11 @@ a {
     text-decoration-line: underline !important;
     color: $color-neutral-medium;
   }
+}
+
+.container {
+  width: 100%;
+  padding: 0 20px;
 }
 
 .button {
