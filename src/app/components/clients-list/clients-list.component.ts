@@ -1,9 +1,11 @@
+import { HttpResponse } from '@angular/common/http';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
 import { ClientService } from '../../services/client.service';
-import { Client } from '../../types/client';
+import { Client, ClientListPages } from '../../types/client';
+import { parseLinkHeaderPages } from '../../utils/utils';
 import { AlertModalComponent } from '../common/alert-modal/alert-modal.component';
 
 @Component({
@@ -15,7 +17,9 @@ export class ClientsListComponent implements OnInit, OnDestroy {
   clientsList: Client[] = [];
   filter: string = '';
 
-  private currentPage = 1;
+  pagesList: number[] = [];
+
+  currentPage = 1;
   private $onDestroy = new Subject<boolean>();
 
   constructor(
@@ -27,7 +31,7 @@ export class ClientsListComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.loadClientsList();
+    this.loadClientsList(this.currentPage);
   }
 
   ngOnDestroy(): void {
@@ -35,15 +39,22 @@ export class ClientsListComponent implements OnInit, OnDestroy {
     this.$onDestroy.complete();
   }
 
-  loadClientsList(): void {
+  loadClientsList(page: number): void {
+    this.currentPage = page;
     this.clientService
-      .listClients({ _page: this.currentPage, filter: this.filter })
+      .listClients({ _page: page, filter: this.filter })
       .pipe(takeUntil(this.$onDestroy))
       .subscribe({
-        next: (clientsListResult: Client[]) => {
-          console.log('clientsListResult', clientsListResult);
+        next: (clientsListResult: HttpResponse<Client[]>) => {
+          const headerLink = clientsListResult.headers.get('Link');
 
-          this.clientsList = [...clientsListResult];
+          let clientListPages: ClientListPages = { first: 1, last: 1 };
+          if (headerLink) {
+            clientListPages = parseLinkHeaderPages(headerLink);
+          }
+          this.pagesList = this.createPagesList(clientListPages);
+
+          this.clientsList = clientsListResult.body || [];
         },
         error: (error) => console.error('Loading data error:', error),
       });
@@ -69,7 +80,7 @@ export class ClientsListComponent implements OnInit, OnDestroy {
           .deleteClient(client.id)
           .pipe(takeUntil(this.$onDestroy))
           .subscribe((deleteResult) => {
-            console.log('deleteResult', deleteResult)
+            console.log('deleteResult', deleteResult);
             if (deleteResult) {
               this.dialog.open(AlertModalComponent, {
                 data: {
@@ -85,5 +96,19 @@ export class ClientsListComponent implements OnInit, OnDestroy {
           });
       }
     });
+  }
+
+  onPageClicked(page: number): void {
+    this.loadClientsList(page);
+  }
+
+  searchWithFilter(): void {
+    this.loadClientsList(1);
+  }
+
+  private createPagesList(clientListPages: ClientListPages): number[] {
+    const pagesList = Object.values(clientListPages);
+    pagesList.push(this.currentPage);
+    return [...new Set(pagesList.sort())];
   }
 }

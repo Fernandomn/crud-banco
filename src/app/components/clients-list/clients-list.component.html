@@ -13,12 +13,15 @@
           name="filter"
           id="filter"
           [(ngModel)]="filter"
+          (keyup)="searchWithFilter()"
         />
       </div>
-
-      <button class="search-button" (click)="loadClientsList()">
-        <img src="../../../assets/search.svg" alt="Search" srcset="" />
-      </button>
+      <img
+        class="search-button"
+        src="../../../assets/search.svg"
+        alt="Search"
+        srcset=""
+      />
     </div>
 
     <div class="add-button">
@@ -63,10 +66,10 @@
       </tbody>
     </table>
 
-    <nav>
-      <ul class="pagination">
-        <li class="page-item"></li>
-      </ul>
-    </nav>
+    <app-paginator
+      [currentPage]="currentPage"
+      [pagesList]="pagesList"
+      (pageClicked)="onPageClicked($event)"
+    ></app-paginator>
   </div>
 </section>

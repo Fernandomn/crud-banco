@@ -1,0 +1,14 @@
+<nav>
+  <ul class="pagination">
+    <li class="pagination-item" *ngFor="let page of pagesList">
+      <button
+        class="round-button medium"
+        [ngClass]="getInfoClass(page)"
+        (click)="onPageButtonClicked(page)"
+        [disabled]="page === currentPage"
+      >
+        {{ page }}
+      </button>
+    </li>
+  </ul>
+</nav>

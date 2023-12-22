@@ -7,3 +7,10 @@ export interface Client {
   email: string;
   registrationDate: Date;
 }
+
+export interface ClientListPages {
+  first: number;
+  prev?: number;
+  next?: number;
+  last: number;
+}

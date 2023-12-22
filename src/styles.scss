@@ -145,6 +145,66 @@ a {
   }
 }
 
+.round-button {
+  display: block;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+
+  border-radius: 50%;
+  border: none;
+  background: $color-neutral-lightest;
+  color: $color-brand-primary-medium;
+  cursor: pointer;
+
+  &:disabled {
+    cursor: no-drop;
+  }
+
+  &.extra-small {
+    padding: 8px;
+    width: 24px;
+    height: 24px;
+    font-size: 8px;
+  }
+  &.small {
+    padding: 8px;
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+  }
+  &.medium {
+    padding: 12px;
+    width: 48px;
+    height: 48px;
+    font-size: 24px;
+  }
+  &.large {
+    padding: 12px;
+    width: 56px;
+    height: 56px;
+    font-size: 32px;
+  }
+
+  &.info {
+    background: $color-feedback-info-lightest;
+    color: $color-feedback-info-dark;
+  }
+  &.attention {
+    background: $color-feedback-info-lightest;
+    color: $color-feedback-info-dark;
+  }
+  &.warning {
+    background: $color-feedback-danger-lightest;
+    color: $color-feedback-danger-medium;
+  }
+  &.success {
+    background: $color-feedback-success-lightest;
+    color: $color-feedback-success-dark;
+  }
+}
+
 html,
 body {
   height: 100%;

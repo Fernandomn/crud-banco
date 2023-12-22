@@ -18,6 +18,7 @@ import { ClientsListComponent } from './components/clients-list/clients-list.com
 import { AlertModalComponent } from './components/common/alert-modal/alert-modal.component';
 import { HeaderComponent } from './components/common/header/header.component';
 import { CardComponent } from './components/common/card/card.component';
+import { PaginatorComponent } from './components/common/paginator/paginator.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { CardComponent } from './components/common/card/card.component';
     HeaderComponent,
     AlertModalComponent,
     CardComponent,
+    PaginatorComponent,
   ],
   imports: [
     BrowserModule,

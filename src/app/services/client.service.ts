@@ -1,4 +1,4 @@
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpParams, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Client } from '../types/client';
@@ -16,22 +16,26 @@ export class ClientService {
     return this.http.post<Client>(this.clientsApiUrl, client);
   }
 
-  listClients(requestParams?: RequestParams): Observable<Client[]> {
+  listClients(
+    requestParams?: RequestParams
+  ): Observable<HttpResponse<Client[]>> {
     const itensPerPage = 10;
     let params = new HttpParams();
-    //   .set('_page', page)
-    //   .set('_limit', itensPerPage);
 
     if (requestParams) {
       params = params
         .set('_page', requestParams._page)
         .set('_limit', itensPerPage);
-      if (requestParams.filter && requestParams.filter?.trim().length > 0) {
+
+      if (requestParams.filter && requestParams.filter?.trim().length > 2) {
         params = params.set('q', requestParams.filter);
       }
     }
 
-    return this.http.get<Client[]>(this.clientsApiUrl, { params });
+    return this.http.get<Client[]>(this.clientsApiUrl, {
+      params,
+      observe: 'response',
+    });
   }
 
   getClientById(id: string): Observable<Client> {
