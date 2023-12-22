@@ -22,10 +22,8 @@ export class ClientsListComponent implements OnInit, OnDestroy {
   headersList: TableHeader[] = [
     { key: 'clientName', name: 'Nome Cliente' },
     { key: 'cpf', name: 'CPF' },
-    { key: 'birthDate', name: 'Data Cadastro' },
+    { key: 'birthDate', name: 'Data Nascimento' },
     { key: 'monthlyIncome', name: 'Renda Mensal' },
-    { key: 'email', name: 'E-mail' },
-    { key: 'registrationDate', name: 'Data Cadastro' },
     { key: 'actions', name: '' },
   ];
 

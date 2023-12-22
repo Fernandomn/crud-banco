@@ -13,18 +13,9 @@
         id="clientName"
         formControlName="clientName"
       />
-      <div
-        class="error-message"
-        *ngIf="form.get('clientName')?.errors?.['required'] && form.get('clientName')?.touched"
-      >
-        Nome Cliente é obrigatório
-      </div>
-      <div
-        class="error-message"
-        *ngIf="form.get('clientName')?.errors?.['pattern'] && form.get('clientName')?.touched"
-      >
-        Nome Cliente deve possuir ao menos um sobrenome
-      </div>
+      <app-input-errors-list
+        [errorsMessagesList]="getClientNameErrors()"
+      ></app-input-errors-list>
 
       <!-- CPF -->
       <label for="cpf">CPF</label>
@@ -35,24 +26,9 @@
         formControlName="cpf"
         [mask]="cpfMask"
       />
-      <div
-        class="error-message"
-        *ngIf="form.get('cpf')?.errors?.['required'] && form.get('cpf')?.touched"
-      >
-        CPF é obrigatório
-      </div>
-      <div
-        class="error-message"
-        *ngIf="form.get('cpf')?.errors?.['maxlength'] && form.get('cpf')?.touched"
-      >
-        CPF deve ter no máximo 11 caracteres
-      </div>
-      <div
-        class="error-message"
-        *ngIf="form.get('cpf')?.errors?.['invalidCpf'] && form.get('cpf')?.touched"
-      >
-        CPF está em formato inválido
-      </div>
+      <app-input-errors-list
+        [errorsMessagesList]="getCpfErrors()"
+      ></app-input-errors-list>
 
       <!-- Data Nascimento -->
       <label for="birthDate">Data Nascimento</label>
@@ -62,18 +38,9 @@
         id="birthDate"
         formControlName="birthDate"
       />
-      <div
-        class="error-message"
-        *ngIf="form.get('birthDate')?.errors?.[ 'required'] && form.get('birthDate')?.touched"
-      >
-        Data Nascimento é obrigatória
-      </div>
-      <div
-        class="error-message"
-        *ngIf="form.get('birthDate')?.errors?.[ 'invalidAge'] && form.get('birthDate')?.touched"
-      >
-        O Cliente deve ter mais de 18 anos, e menos de 60
-      </div>
+      <app-input-errors-list
+        [errorsMessagesList]="getBirthDateErrors()"
+      ></app-input-errors-list>
 
       <!-- Renda Mensal -->
       <label for="monthlyIncome">Renda Mensal</label>
@@ -86,35 +53,16 @@
         thousandSeparator="."
         prefix="R$"
       />
-      <div
-        class="error-message"
-        *ngIf="
-          form.get('monthlyIncome')?.errors &&
-          form.get('monthlyIncome')?.touched
-        "
-      >
-        Renda Mensal é obrigatória
-      </div>
+      <app-input-errors-list
+        [errorsMessagesList]="getMonthlyIncomeErrors()"
+      ></app-input-errors-list>
 
       <!-- E-mail -->
       <label for="email">E-mail</label>
       <input type="email" name="email" id="email" formControlName="email" />
-      <div
-        class="error-message"
-        *ngIf="
-        form.get('email')?.errors?.['required'] && form.get('email')?.touched
-      "
-      >
-        E-mail é obrigatório
-      </div>
-      <div
-        class="error-message"
-        *ngIf="
-        form.get('email')?.errors?.['email'] && form.get('email')?.touched
-      "
-      >
-        Formato de e-mail incorreto
-      </div>
+      <app-input-errors-list
+        [errorsMessagesList]="getEmailErrors()"
+      ></app-input-errors-list>
 
       <!-- Data Cadastro -->
       <label for="registrationDate">Data Cadastro</label>
@@ -124,24 +72,9 @@
         id="registrationDate"
         formControlName="registrationDate"
       />
-      <div
-        class="error-message"
-        *ngIf="
-        form.get('registrationDate')?.errors?.['required'] &&
-        form.get('registrationDate')?.touched
-      "
-      >
-        Data Cadastro é obrigatória
-      </div>
-      <div
-        class="error-message"
-        *ngIf="
-        form.get('registrationDate')?.errors?.['futureDate'] &&
-        form.get('registrationDate')?.touched
-      "
-      >
-        Data Cadastro deve ser a data de hoje, ou anterior
-      </div>
+      <app-input-errors-list
+        [errorsMessagesList]="getRegistrationDateErrors()"
+      ></app-input-errors-list>
 
       <div class="form__buttons">
         <button class="button secondary columns" routerLink="/">

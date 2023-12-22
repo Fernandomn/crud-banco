@@ -1,6 +1,5 @@
 .container {
   & form {
-
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -9,7 +8,6 @@
     & label {
       color: #154580;
       font-weight: bold;
-      // margin: 0 0 1rem;
     }
 
     & input {

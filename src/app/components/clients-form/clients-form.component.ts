@@ -6,6 +6,7 @@ import { Subject, takeUntil } from 'rxjs';
 import { v4 as uuidv4 } from 'uuid';
 import { ClientService } from '../../services/client.service';
 import { Client } from '../../types/client';
+import { ErrorWrapper } from '../../types/common';
 import {
   ageValidator,
   cpfValidator,
@@ -91,6 +92,105 @@ export class ClientsFormComponent implements OnInit, OnDestroy {
     }
   }
 
+  getClientNameErrors(): ErrorWrapper[] {
+    return [
+      {
+        errorMessage: 'Nome Cliente é obrigatório',
+        shouldDisplayError:
+          this.form.get('clientName')?.errors?.['required'] &&
+          this.form.get('clientName')?.touched,
+      },
+      {
+        errorMessage: 'Nome Cliente deve possuir ao menos um sobrenome',
+        shouldDisplayError:
+          this.form.get('clientName')?.errors?.['pattern'] &&
+          this.form.get('clientName')?.touched,
+      },
+    ];
+  }
+
+  getCpfErrors(): ErrorWrapper[] {
+    return [
+      {
+        errorMessage: 'CPF é obrigatório',
+        shouldDisplayError:
+          this.form.get('cpf')?.errors?.['required'] &&
+          this.form.get('cpf')?.touched,
+      },
+      {
+        errorMessage: 'CPF deve ter no máximo 11 caracteres',
+        shouldDisplayError:
+          this.form.get('cpf')?.errors?.['maxlength'] &&
+          this.form.get('cpf')?.touched,
+      },
+      {
+        errorMessage: 'CPF está em formato inválido',
+        shouldDisplayError:
+          this.form.get('cpf')?.errors?.['invalidCpf'] &&
+          this.form.get('cpf')?.touched,
+      },
+    ];
+  }
+  getBirthDateErrors(): ErrorWrapper[] {
+    return [
+      {
+        errorMessage: 'Data Nascimento é obrigatória',
+        shouldDisplayError:
+          this.form.get('birthDate')?.errors?.['required'] &&
+          this.form.get('birthDate')?.touched,
+      },
+      {
+        errorMessage: 'O Cliente deve ter mais de 18 anos, e menos de 60',
+        shouldDisplayError:
+          this.form.get('birthDate')?.errors?.['invalidAge'] &&
+          this.form.get('birthDate')?.touched,
+      },
+    ];
+  }
+
+  getMonthlyIncomeErrors(): ErrorWrapper[] {
+    return [
+      {
+        errorMessage: 'Renda Mensal é obrigatória',
+        shouldDisplayError:
+          this.form.get('monthlyIncome')?.errors?.['required'] &&
+          this.form.get('monthlyIncome')?.touched,
+      },
+    ];
+  }
+  getEmailErrors(): ErrorWrapper[] {
+    return [
+      {
+        errorMessage: 'E-mail é obrigatório',
+        shouldDisplayError:
+          this.form.get('email')?.errors?.['required'] &&
+          this.form.get('email')?.touched,
+      },
+      {
+        errorMessage: 'Formato de e-mail incorreto',
+        shouldDisplayError:
+          this.form.get('email')?.errors?.['email'] &&
+          this.form.get('email')?.touched,
+      },
+    ];
+  }
+  getRegistrationDateErrors(): ErrorWrapper[] {
+    return [
+      {
+        errorMessage: 'Data Cadastro é obrigatória',
+        shouldDisplayError:
+          this.form.get('registrationDate')?.errors?.['required'] &&
+          this.form.get('registrationDate')?.touched,
+      },
+      {
+        errorMessage: 'Data Cadastro deve ser a data de hoje, ou anterior',
+        shouldDisplayError:
+          this.form.get('registrationDate')?.errors?.['futureDate'] &&
+          this.form.get('registrationDate')?.touched,
+      },
+    ];
+  }
+
   private infoAndRouteToMainPage() {
     const dialogRef = this.dialog.open(AlertModalComponent, {
       data: {
@@ -110,7 +210,7 @@ export class ClientsFormComponent implements OnInit, OnDestroy {
         this.client.clientName,
         Validators.compose([
           Validators.required,
-          Validators.pattern(/(.|\s)*\S(.|\s)*/),
+          Validators.pattern(/\w+\s\w+/),
         ]),
       ],
       cpf: [
