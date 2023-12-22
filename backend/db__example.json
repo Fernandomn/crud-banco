@@ -1,0 +1,445 @@
+{
+  "clients": [
+    {
+      "clientName": "Fernando Medeiros",
+      "cpf": "04105887505",
+      "birthDate": "1990-12-19",
+      "monthlyIncome": 634345340.45,
+      "email": "fernando_m_n@hotmail.com",
+      "registrationDate": "2023-12-21",
+      "id": "6a899ecc-92c7-43bc-a626-b485f2821d84"
+    },
+    {
+      "clientName": "Fernando Medeiros",
+      "cpf": "04105887505",
+      "birthDate": "2023-12-22T02:08:04.847Z",
+      "monthlyIncome": 3546645,
+      "email": "fernando_m_n@hotmail.com",
+      "registrationDate": "2023-12-22T02:08:04.847Z",
+      "id": "bbd8c58f-fd5f-4f1d-8c19-c34aa900fa01"
+    },
+    {
+      "clientName": "Nina Corcos",
+      "cpf": "34567812397",
+      "birthDate": "1998-08-13",
+      "monthlyIncome": 9876543,
+      "email": "nina@corcos.com",
+      "registrationDate": "2023-12-22",
+      "id": "6c962ace-7dee-46b2-b1d0-77a3a6577f52"
+    },
+    {
+      "clientName": "Camila Alves Vicente",
+      "cpf": "84612226879",
+      "birthDate": "1995-08-07",
+      "monthlyIncome": 6565456456.78,
+      "email": "camila.vicente@google.com",
+      "registrationDate": "2023-12-06",
+      "id": "033dd3da-ea98-48d9-ab6b-d833e76ce3ed"
+    },
+    {
+      "clientName": "dsg gsdf s",
+      "cpf": "85999766052",
+      "birthDate": "2000-02-16",
+      "monthlyIncome": 35456456,
+      "email": "dfsfsdf@fgdd.com",
+      "registrationDate": "2023-11-28",
+      "id": "ba6b425c-adb0-4c46-b15b-153aba9e1db7"
+    },
+    {
+      "clientName": "Fernando Medeiros",
+      "cpf": "04105887505",
+      "birthDate": "1990-12-19",
+      "monthlyIncome": 634345340.45,
+      "email": "fernando_m_n@hotmail.com",
+      "registrationDate": "2023-12-21",
+      "id": "73a2ca34-bc69-45a5-94e6-76f50d6c98fb"
+    },
+    {
+      "clientName": "Fernando Medeiros",
+      "cpf": "04105887505",
+      "birthDate": "2023-12-22T02:08:04.847Z",
+      "monthlyIncome": 3546645,
+      "email": "fernando_m_n@hotmail.com",
+      "registrationDate": "2023-12-22T02:08:04.847Z",
+      "id": "52f02d3d-6996-4a78-b784-18abe69e2ec2"
+    },
+    {
+      "clientName": "Nina Corcos",
+      "cpf": "34567812397",
+      "birthDate": "1998-08-13",
+      "monthlyIncome": 9876543,
+      "email": "nina@corcos.com",
+      "registrationDate": "2023-12-22",
+      "id": "5b29fcc6-9c8b-4a92-ac8b-d5f3c7cb7763"
+    },
+    {
+      "clientName": "Camila Alves Vicente",
+      "cpf": "84612226879",
+      "birthDate": "1995-08-07",
+      "monthlyIncome": 6565456456.78,
+      "email": "camila.vicente@google.com",
+      "registrationDate": "2023-12-06",
+      "id": "0d934b33-f072-479d-8e43-4caf257d5db7"
+    },
+    {
+      "clientName": "dsg gsdf s",
+      "cpf": "85999766052",
+      "birthDate": "2000-02-16",
+      "monthlyIncome": 35456456,
+      "email": "dfsfsdf@fgdd.com",
+      "registrationDate": "2023-11-28",
+      "id": "47e96fc8-5144-470f-8d8f-f70888c1e793"
+    },
+    {
+      "clientName": "Fernando Medeiros",
+      "cpf": "04105887505",
+      "birthDate": "1990-12-19",
+      "monthlyIncome": 634345340.45,
+      "email": "fernando_m_n@hotmail.com",
+      "registrationDate": "2023-12-21",
+      "id": "bad4f18b-34c7-46d7-b675-0d6a50b5546e"
+    },
+    {
+      "clientName": "Fernando Medeiros",
+      "cpf": "04105887505",
+      "birthDate": "2023-12-22T02:08:04.847Z",
+      "monthlyIncome": 3546645,
+      "email": "fernando_m_n@hotmail.com",
+      "registrationDate": "2023-12-22T02:08:04.847Z",
+      "id": "6aee3d5b-4ecc-437b-b83c-c0a776be1ad3"
+    },
+    {
+      "clientName": "Nina Corcos",
+      "cpf": "34567812397",
+      "birthDate": "1998-08-13",
+      "monthlyIncome": 9876543,
+      "email": "nina@corcos.com",
+      "registrationDate": "2023-12-22",
+      "id": "b6341f26-4801-49ca-918e-196a1d05ef90"
+    },
+    {
+      "clientName": "Camila Alves Vicente",
+      "cpf": "84612226879",
+      "birthDate": "1995-08-07",
+      "monthlyIncome": 6565456456.78,
+      "email": "camila.vicente@google.com",
+      "registrationDate": "2023-12-06",
+      "id": "6745e1ba-5837-4760-b508-f7201355b1c7"
+    },
+    {
+      "clientName": "dsg gsdf s",
+      "cpf": "85999766052",
+      "birthDate": "2000-02-16",
+      "monthlyIncome": 35456456,
+      "email": "dfsfsdf@fgdd.com",
+      "registrationDate": "2023-11-28",
+      "id": "8aa12d86-d239-4010-8d2e-0c44c0d657de"
+    },
+    {
+      "clientName": "Onix Medeiros",
+      "cpf": "60841267073",
+      "birthDate": "2004-02-19",
+      "monthlyIncome": 7656756,
+      "email": "onix@gmail.com",
+      "registrationDate": "2023-12-07",
+      "id": "7d9836ca-a7e5-4794-a5ad-1c1f475e9103"
+    },
+    {
+      "clientName": "Ana Silva",
+      "cpf": "123.456.789-09",
+      "birthDate": "1990-05-15",
+      "monthlyIncome": 5000,
+      "email": "ana.silva@example.com",
+      "registrationDate": "2022-01-01",
+      "id": "61d2c170-16d8-11ec-9621-0242ac130002"
+    },
+    {
+      "clientName": "Carlos Oliveira",
+      "cpf": "987.654.321-00",
+      "birthDate": "1985-08-20",
+      "monthlyIncome": 7000,
+      "email": "carlos.oliveira@example.com",
+      "registrationDate": "2022-02-15",
+      "id": "61d2c2de-16d8-11ec-9621-0242ac130002"
+    },
+    {
+      "clientName": "Maria Santos",
+      "cpf": "111.222.333-44",
+      "birthDate": "1988-11-25",
+      "monthlyIncome": 6000,
+      "email": "maria.santos@example.com",
+      "registrationDate": "2022-03-10",
+      "id": "61d2c42c-16d8-11ec-9621-0242ac130002"
+    },
+    {
+      "clientName": "Paulo Lima",
+      "cpf": "555.666.777-88",
+      "birthDate": "1975-04-12",
+      "monthlyIncome": 8000,
+      "email": "paulo.lima@example.com",
+      "registrationDate": "2022-04-05",
+      "id": "61d2c58c-16d8-11ec-9621-0242ac130002"
+    },
+    {
+      "clientName": "Laura Oliveira",
+      "cpf": "333.444.555-66",
+      "birthDate": "1995-09-18",
+      "monthlyIncome": 5500,
+      "email": "laura.oliveira@example.com",
+      "registrationDate": "2022-05-20",
+      "id": "61d2c6f2-16d8-11ec-9621-0242ac130002"
+    },
+    {
+      "clientName": "Ricardo Souza",
+      "cpf": "999.888.777-66",
+      "birthDate": "1982-02-28",
+      "monthlyIncome": 7500,
+      "email": "ricardo.souza@example.com",
+      "registrationDate": "2022-06-15",
+      "id": "61d2c834-16d8-11ec-9621-0242ac130002"
+    },
+    {
+      "clientName": "Fernanda Santos",
+      "cpf": "777.888.999-11",
+      "birthDate": "1978-07-05",
+      "monthlyIncome": 6800,
+      "email": "fernanda.santos@example.com",
+      "registrationDate": "2022-07-01",
+      "id": "61d2c99c-16d8-11ec-9621-0242ac130002"
+    },
+    {
+      "clientName": "Gabriel Lima",
+      "cpf": "444.333.222-11",
+      "birthDate": "1993-12-10",
+      "monthlyIncome": 6200,
+      "email": "gabriel.lima@example.com",
+      "registrationDate": "2022-08-10",
+      "id": "61d2caf8-16d8-11ec-9621-0242ac130002"
+    },
+    {
+      "clientName": "Amanda Souza",
+      "cpf": "555.777.999-11",
+      "birthDate": "1987-03-22",
+      "monthlyIncome": 5300,
+      "email": "amanda.souza@example.com",
+      "registrationDate": "2022-09-05",
+      "id": "61d2cc60-16d8-11ec-9621-0242ac130002"
+    },
+    {
+      "clientName": "Roberto Santos",
+      "cpf": "111.555.999-22",
+      "birthDate": "1970-06-18",
+      "monthlyIncome": 9000,
+      "email": "roberto.santos@example.com",
+      "registrationDate": "2022-10-12",
+      "id": "61d2cdbc-16d8-11ec-9621-0242ac130002"
+    },
+    {
+      "clientName": "Leticia Oliveira",
+      "cpf": "222.555.888-33",
+      "birthDate": "1996-01-05",
+      "monthlyIncome": 4500,
+      "email": "leticia.oliveira@example.com",
+      "registrationDate": "2022-11-25",
+      "id": "61d2cf24-16d8-11ec-9621-0242ac130002"
+    },
+    {
+      "clientName": "Hugo Silva",
+      "cpf": "888.222.444-55",
+      "birthDate": "1983-04-30",
+      "monthlyIncome": 7800,
+      "email": "hugo.silva@example.com",
+      "registrationDate": "2022-12-20",
+      "id": "61d2d07e-16d8-11ec-9621-0242ac130002"
+    },
+    {
+      "clientName": "Lucia Lima",
+      "cpf": "777.666.555-11",
+      "birthDate": "1989-07-15",
+      "monthlyIncome": 6700,
+      "email": "lucia.lima@example.com",
+      "registrationDate": "2023-01-10",
+      "id": "61d2d1e4-16d8-11ec-9621-0242ac130002"
+    },
+    {
+      "clientName": "Rafael Oliveira",
+      "cpf": "444.777.999-22",
+      "birthDate": "1980-10-08",
+      "monthlyIncome": 8500,
+      "email": "rafael.oliveira@example.com",
+      "registrationDate": "2023-02-18",
+      "id": "61d2d34c-16d8-11ec-9621-0242ac130002"
+    },
+    {
+      "clientName": "Juliana Santos",
+      "cpf": "111.777.888-22",
+      "birthDate": "1992-05-02",
+      "monthlyIncome": 5900,
+      "email": "juliana.santos@example.com",
+      "registrationDate": "2023-03-05",
+      "id": "61d2d4a6-16d8-11ec-9621-0242ac130002"
+    },
+    {
+      "clientName": "Gustavo Lima",
+      "cpf": "555.888.777-44",
+      "birthDate": "1974-08-27",
+      "monthlyIncome": 7200,
+      "email": "gustavo.lima@example.com",
+      "registrationDate": "2023-04-12",
+      "id": "61d2d606-16d8-11ec-9621-0242ac130002"
+    },
+    {
+      "clientName": "Sandra Oliveira",
+      "cpf": "999.444.888-22",
+      "birthDate": "1986-11-11",
+      "monthlyIncome": 6300,
+      "email": "sandra.oliveira@example.com",
+      "registrationDate": "2023-05-20",
+      "id": "61d2d75e-16d8-11ec-9621-0242ac130002"
+    },
+    {
+      "clientName": "Fernando Silva",
+      "cpf": "222.666.888-44",
+      "birthDate": "1977-02-14",
+      "monthlyIncome": 9400,
+      "email": "fernando.silva@example.com",
+      "registrationDate": "2023-06-15",
+      "id": "61d2d8b8-16d8-11ec-9621-0242ac130002"
+    },
+    {
+      "clientName": "Isabel Lima",
+      "cpf": "777.555.333-44",
+      "birthDate": "1994-03-18",
+      "monthlyIncome": 5500,
+      "email": "isabel.lima@example.com",
+      "registrationDate": "2023-07-01",
+      "id": "61d2da12-16d8-11ec-9621-0242ac130002"
+    },
+    {
+      "clientName": "Renato Santos",
+      "cpf": "333.999.777-55",
+      "birthDate": "1971-06-22",
+      "monthlyIncome": 8100,
+      "email": "renato.santos@example.com",
+      "registrationDate": "2023-08-10",
+      "id": "61d2db6c-16d8-11ec-9621-0242ac130002"
+    },
+    {
+      "clientName": "Camila Oliveira",
+      "cpf": "444.222.666-88",
+      "birthDate": "1981-09-05",
+      "monthlyIncome": 7200,
+      "email": "camila.oliveira@example.com",
+      "registrationDate": "2023-09-05",
+      "id": "61d2dcc6-16d8-11ec-9621-0242ac130002"
+    },
+    {
+      "clientName": "Roberto Lima",
+      "cpf": "888.555.444-66",
+      "birthDate": "1984-12-30",
+      "monthlyIncome": 8800,
+      "email": "roberto.lima@example.com",
+      "registrationDate": "2023-10-12",
+      "id": "61d2de20-16d8-11ec-9621-0242ac130002"
+    },
+    {
+      "clientName": "Cristina Santos",
+      "cpf": "666.333.999-11",
+      "birthDate": "1997-01-12",
+      "monthlyIncome": 5000,
+      "email": "cristina.santos@example.com",
+      "registrationDate": "2023-11-25",
+      "id": "61d2df7a-16d8-11ec-9621-0242ac130002"
+    },
+    {
+      "clientName": "Lucas Oliveira",
+      "cpf": "222.777.999-11",
+      "birthDate": "1979-04-25",
+      "monthlyIncome": 6700,
+      "email": "lucas.oliveira@example.com",
+      "registrationDate": "2023-12-20",
+      "id": "61d2dfe0-16d8-11ec-9621-0242ac130002"
+    },
+    {
+      "clientName": "Fernanda Souza",
+      "cpf": "222.333.444-55",
+      "birthDate": "1992-09-08",
+      "monthlyIncome": 5500,
+      "email": "fernanda.souza@example.com",
+      "registrationDate": "2022-05-20",
+      "id": "61d2c6ec-16d8-11ec-9621-0242ac130002"
+    },
+    {
+      "clientName": "Ricardo Pereira",
+      "cpf": "444.555.666-77",
+      "birthDate": "1983-07-30",
+      "monthlyIncome": 7500,
+      "email": "ricardo.pereira@example.com",
+      "registrationDate": "2022-06-15",
+      "id": "61d2c84c-16d8-11ec-9621-0242ac130002"
+    },
+    {
+      "clientName": "Camila Rocha",
+      "cpf": "777.888.999-00",
+      "birthDate": "1978-12-18",
+      "monthlyIncome": 6200,
+      "email": "camila.rocha@example.com",
+      "registrationDate": "2022-07-10",
+      "id": "61d2c9ac-16d8-11ec-9621-0242ac130002"
+    },
+    {
+      "clientName": "Leandro Santos",
+      "cpf": "333.444.555-66",
+      "birthDate": "1995-02-05",
+      "monthlyIncome": 6700,
+      "email": "leandro.santos@example.com",
+      "registrationDate": "2022-08-25",
+      "id": "61d2cb0c-16d8-11ec-9621-0242ac130002"
+    },
+    {
+      "clientName": "Juliana Lima",
+      "cpf": "666.777.888-99",
+      "birthDate": "1980-06-22",
+      "monthlyIncome": 4800,
+      "email": "juliana.lima@example.com",
+      "registrationDate": "2022-09-15",
+      "id": "61d2cc6c-16d8-11ec-9621-0242ac130002"
+    },
+    {
+      "clientName": "Lucas Oliveira",
+      "cpf": "999.000.111-22",
+      "birthDate": "1970-11-10",
+      "monthlyIncome": 9000,
+      "email": "lucas.oliveira@example.com",
+      "registrationDate": "2022-10-01",
+      "id": "61d2cddc-16d8-11ec-9621-0242ac130002"
+    },
+    {
+      "clientName": "Aline Silva",
+      "cpf": "111.222.333-44",
+      "birthDate": "1993-04-28",
+      "monthlyIncome": 5300,
+      "email": "aline.silva@example.com",
+      "registrationDate": "2022-11-12",
+      "id": "61d2cf3c-16d8-11ec-9621-0242ac130002"
+    },
+    {
+      "clientName": "Rodrigo Santos",
+      "cpf": "222.333.444-55",
+      "birthDate": "1987-03-17",
+      "monthlyIncome": 7200,
+      "email": "rodrigo.santos@example.com",
+      "registrationDate": "2022-12-05",
+      "id": "61d2d09c-16d8-11ec-9621-0242ac130002"
+    },
+    {
+      "clientName": "Fernando Oliveira",
+      "cpf": "555.666.777-88",
+      "birthDate": "1976-08-04",
+      "monthlyIncome": 6800,
+      "email": "fernando.oliveira@example.com",
+      "registrationDate": "2023-01-20",
+      "id": "61d2d1fc-16d8-11ec-9621-0242ac130002"
+    }
+  ]
+}
