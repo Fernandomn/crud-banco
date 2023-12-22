@@ -30,6 +30,20 @@ export class ClientService {
       if (requestParams.filter && requestParams.filter?.trim().length > 2) {
         params = params.set('q', requestParams.filter);
       }
+
+      if (requestParams.tableHeaders && requestParams.tableHeaders.length > 0) {
+        const tableHeaders = requestParams.tableHeaders.filter(
+          (item) => item.sort
+        );
+        params = params.set(
+          '_sort',
+          tableHeaders.map((item) => item.key).join(',')
+        );
+        params = params.set(
+          '_order',
+          tableHeaders.map((item) => item.sort).join(',')
+        );
+      }
     }
 
     return this.http.get<Client[]>(this.clientsApiUrl, {

@@ -1,8 +1,8 @@
-<section class="container">
-  <header>
-    <h1>Clientes</h1>
-  </header>
+<header>
+  <h1>Clientes</h1>
+</header>
 
+<section class="container">
   <div class="controllers">
     <div class="filter">
       <div class="input-box">
@@ -35,13 +35,16 @@
     <table>
       <thead>
         <tr>
-          <th>Nome Cliente</th>
-          <th>CPF</th>
-          <th>Data Cadastro</th>
-          <th>Renda Mensal</th>
-          <th>E-mail</th>
-          <th>Data Cadastro</th>
-          <th></th>
+          <th *ngFor="let header of headersList" (click)="sortingTable(header)">
+            {{ header.name }}
+            <img
+              *ngIf="header.sort"
+              src="../../../assets/right-arrow-primary-lightest.svg"
+              class="table__header__sort-icon"
+              [class]="header.sort"
+              alt=""
+            />
+          </th>
         </tr>
       </thead>
       <tbody>

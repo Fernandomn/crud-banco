@@ -1,8 +1,8 @@
-<section class="container">
-  <header>
-    <h1>{{ isCreatingClient ? "Criar" : "Atualizar" }} cliente</h1>
-  </header>
+<header>
+  <h1>{{ isCreatingClient ? "Criar" : "Atualizar" }} cliente</h1>
+</header>
 
+<section class="container">
   <app-card>
     <form [formGroup]="form" *ngIf="form">
       <!-- Nome Cliente -->

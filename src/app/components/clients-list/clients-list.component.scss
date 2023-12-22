@@ -1,6 +1,12 @@
 @import "../../../styles/colors";
 @import "../../../styles/variables";
 
+.container{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
 .controllers {
   width: 100%;
   display: flex;
@@ -13,7 +19,7 @@
   .input-box {
     display: flex;
     flex-direction: column;
-    height: 48px;
+    height: 40px;
     padding: 6px 16px;
     align-items: flex-start;
     flex-shrink: 0;
@@ -62,6 +68,19 @@
       font-style: normal;
       font-weight: $weight-bold;
       color: $color-neutral-white;
+
+      & tr th .table__header__sort-icon {
+        color: $color-neutral-white;
+        width: 16px;
+        height: 16px;
+
+        &.asc {
+          transform: rotate(-0.25turn);
+        }
+        &.desc {
+          transform: rotate(0.25turn);
+        }
+      }
     }
 
     & tbody {
