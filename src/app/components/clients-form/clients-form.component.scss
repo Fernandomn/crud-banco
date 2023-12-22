@@ -1,28 +1,42 @@
+@import "../../../styles/colors";
+@import "../../../styles/variables";
+
 .container {
   & form {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
+    gap: 10px;
 
-    & label {
-      color: #154580;
-      font-weight: bold;
-    }
+    & .input-box {
+      display: flex;
+      flex-direction: column;
+      padding: 6px 16px;
+      align-items: flex-start;
+      flex-shrink: 0;
+      align-self: stretch;
+      width: 100%;
 
-    & input {
-      border: none;
-      height: 40px;
-      padding: 1rem 2rem;
-      border-radius: 20px;
-      margin: 0.5rem 0 1rem;
-    }
+      border-radius: 8px;
+      border: 1px solid $color-neutral-lightest;
+      background: $color-neutral-white;
 
-    & .textarea {
-      border: none;
-      padding: 1rem 2rem;
-      border-radius: 20px;
-      margin: 0.5rem 0 2rem;
+      &__label {
+        font-size: 10px;
+        font-style: normal;
+        font-weight: $weight-bold;
+        color: #154580;
+        font-weight: bold;
+      }
+
+      &__input {
+        width: 100%;
+        height: 18px;
+        border: none;
+        padding: 1rem 2rem;
+        border-radius: 20px;
+      }
     }
   }
 
@@ -30,5 +44,6 @@
     display: flex;
     width: 100%;
     justify-content: right;
+    gap: 10px;
   }
 }

@@ -6,72 +6,97 @@
   <app-card>
     <form [formGroup]="form" *ngIf="form">
       <!-- Nome Cliente -->
-      <label for="clientName">Nome Cliente</label>
-      <input
-        type="text"
-        name="clientName"
-        id="clientName"
-        formControlName="clientName"
-      />
+      <div class="input-box">
+        <label class="input-box__label" for="clientName">Nome Cliente</label>
+        <input
+          class="input-box__input"
+          type="text"
+          name="clientName"
+          id="clientName"
+          formControlName="clientName"
+        />
+      </div>
       <app-input-errors-list
         [errorsMessagesList]="getClientNameErrors()"
       ></app-input-errors-list>
 
       <!-- CPF -->
-      <label for="cpf">CPF</label>
-      <input
-        type="text"
-        name="cpf"
-        id="cpf"
-        formControlName="cpf"
-        [mask]="cpfMask"
-      />
+      <div class="input-box">
+        <label class="input-box__label" for="cpf">CPF</label>
+        <input
+          class="input-box__input"
+          type="text"
+          name="cpf"
+          id="cpf"
+          formControlName="cpf"
+          [mask]="cpfMask"
+        />
+      </div>
       <app-input-errors-list
         [errorsMessagesList]="getCpfErrors()"
       ></app-input-errors-list>
 
       <!-- Data Nascimento -->
-      <label for="birthDate">Data Nascimento</label>
-      <input
-        type="date"
-        name="birthDate"
-        id="birthDate"
-        formControlName="birthDate"
-      />
+      <div class="input-box">
+        <label class="input-box__label" for="birthDate">Data Nascimento</label>
+        <input
+          class="input-box__input"
+          type="date"
+          name="birthDate"
+          id="birthDate"
+          formControlName="birthDate"
+        />
+      </div>
       <app-input-errors-list
         [errorsMessagesList]="getBirthDateErrors()"
       ></app-input-errors-list>
 
       <!-- Renda Mensal -->
-      <label for="monthlyIncome">Renda Mensal</label>
-      <input
-        type="text"
-        name="monthlyIncome"
-        id="monthlyIncome"
-        formControlName="monthlyIncome"
-        mask="separator.2"
-        thousandSeparator="."
-        prefix="R$"
-      />
+      <div class="input-box">
+        <label class="input-box__label" for="monthlyIncome">Renda Mensal</label>
+        <input
+          class="input-box__input"
+          type="text"
+          name="monthlyIncome"
+          id="monthlyIncome"
+          formControlName="monthlyIncome"
+          mask="separator.2"
+          thousandSeparator="."
+          prefix="R$"
+        />
+      </div>
       <app-input-errors-list
         [errorsMessagesList]="getMonthlyIncomeErrors()"
       ></app-input-errors-list>
 
       <!-- E-mail -->
-      <label for="email">E-mail</label>
-      <input type="email" name="email" id="email" formControlName="email" />
+      <div class="input-box">
+        <label class="input-box__label" for="email">E-mail</label>
+        <input
+          class="input-box__input"
+          type="email"
+          name="email"
+          id="email"
+          formControlName="email"
+        />
+      </div>
       <app-input-errors-list
         [errorsMessagesList]="getEmailErrors()"
       ></app-input-errors-list>
 
       <!-- Data Cadastro -->
-      <label for="registrationDate">Data Cadastro</label>
-      <input
-        type="date"
-        name="registrationDate"
-        id="registrationDate"
-        formControlName="registrationDate"
-      />
+      <div class="input-box">
+        <label class="input-box__label" for="registrationDate"
+          >Data Cadastro</label
+        >
+        <input
+          class="input-box__input"
+          type="date"
+          name="registrationDate"
+          id="registrationDate"
+          formControlName="registrationDate"
+        />
+      </div>
       <app-input-errors-list
         [errorsMessagesList]="getRegistrationDateErrors()"
       ></app-input-errors-list>

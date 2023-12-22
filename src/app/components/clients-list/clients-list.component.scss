@@ -1,7 +1,7 @@
 @import "../../../styles/colors";
 @import "../../../styles/variables";
 
-.container{
+.container {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -19,12 +19,11 @@
   .input-box {
     display: flex;
     flex-direction: column;
-    height: 40px;
     padding: 6px 16px;
     align-items: flex-start;
     flex-shrink: 0;
     align-self: stretch;
-    width: 160px;
+    width: 100%;
 
     border-radius: 8px;
     border: 1px solid $color-neutral-lightest;
