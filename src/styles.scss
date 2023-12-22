@@ -11,6 +11,7 @@ h4,
 h5,
 h6,
 p,
+a,
 span,
 label,
 button {
@@ -27,6 +28,27 @@ h2 {
   font-size: 36px;
 }
 
+a {
+  color: $color-brand-primary-medium;
+  font-size: 14px;
+  font-weight: $weight-bold;
+
+  &:hover {
+    text-decoration-line: underline;
+  }
+  &:focus {
+    border-radius: 4px;
+    border: 2px solid var(--Financeira-Crdito-Feedback-Info-medium, #3ca6d6);
+  }
+  &:active {
+    text-decoration-line: underline;
+  }
+  &:disabled {
+    text-decoration-line: underline;
+    color: $color-neutral-medium;
+  }
+}
+
 .button {
   display: flex;
   align-items: center;
@@ -35,6 +57,7 @@ h2 {
   height: 40px;
   font-size: 14px;
   font-weight: $weight-bold;
+  border: none;
 
   &.full-width {
     width: 304px;
@@ -55,6 +78,7 @@ h2 {
     }
     &:focus {
       background-color: $color-feedback-info-medium;
+      border: 2px solid $color-brand-primary-medium;
     }
     &:active {
       background-color: $color-brand-primary-darkest;
@@ -73,6 +97,7 @@ h2 {
     }
     &:focus {
       background-color: $color-support-02-medium;
+      border: 2px solid $color-brand-primary-medium;
     }
     &:active {
       background-color: $color-support-02-dark;
@@ -82,4 +107,32 @@ h2 {
       color: $color-neutral-medium;
     }
   }
+  &.tertiary {
+    background-color: $color-linear-gradient-secondary;
+    color: $color-brand-primary-medium;
+
+    &:hover {
+      background-color: $color-brand-secondary-dark;
+    }
+    &:focus {
+      background-color: $color-linear-gradient-secondary;
+      border: 2px solid $color-feedback-info-medium;
+    }
+    &:active {
+      background-color: $color-brand-secondary-dark;
+    }
+    &:disabled {
+      background-color: $color-neutral-lightest;
+      color: $color-neutral-medium;
+    }
+  }
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
