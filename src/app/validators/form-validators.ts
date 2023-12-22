@@ -65,7 +65,6 @@ export function ageValidator(
   const today = new Date();
 
   const age = today.getFullYear() - birthDate.getFullYear();
-  const mesAtual = today.getMonth() + 1;
 
   if (
     age < 18 ||
@@ -90,7 +89,7 @@ export function todayOrPastDateValidator(
 
   const selectedDate = new Date(control.value);
   const today = new Date();
-  
+
   if (selectedDate > today) {
     return { futureDate: true };
   }

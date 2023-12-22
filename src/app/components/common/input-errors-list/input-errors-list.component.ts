@@ -7,5 +7,5 @@ import { ErrorWrapper } from '../../../types/common';
   styleUrl: './input-errors-list.component.scss',
 })
 export class InputErrorsListComponent {
-  @Input() errorsMessagesList: ErrorWrapper[]=[];
+  @Input() errorsMessagesList: ErrorWrapper[] = [];
 }

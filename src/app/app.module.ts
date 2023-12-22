@@ -16,10 +16,10 @@ import { AppComponent } from './app.component';
 import { ClientsFormComponent } from './components/clients-form/clients-form.component';
 import { ClientsListComponent } from './components/clients-list/clients-list.component';
 import { AlertModalComponent } from './components/common/alert-modal/alert-modal.component';
-import { HeaderComponent } from './components/common/header/header.component';
 import { CardComponent } from './components/common/card/card.component';
-import { PaginatorComponent } from './components/common/paginator/paginator.component';
+import { HeaderComponent } from './components/common/header/header.component';
 import { InputErrorsListComponent } from './components/common/input-errors-list/input-errors-list.component';
+import { PaginatorComponent } from './components/common/paginator/paginator.component';
 
 @NgModule({
   declarations: [

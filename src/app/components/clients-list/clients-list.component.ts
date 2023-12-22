@@ -78,7 +78,6 @@ export class ClientsListComponent implements OnInit, OnDestroy {
 
   removeClient(client: Client) {
     const dialogRef = this.dialog.open(AlertModalComponent, {
-      maxWidth: '400px',
       data: {
         modalIcon: 'circle-alert',
         enableCancel: true,
@@ -92,7 +91,6 @@ export class ClientsListComponent implements OnInit, OnDestroy {
           .deleteClient(client.id)
           .pipe(takeUntil(this.$onDestroy))
           .subscribe((deleteResult) => {
-            console.log('deleteResult', deleteResult);
             if (deleteResult) {
               this.dialog.open(AlertModalComponent, {
                 data: {
@@ -101,9 +99,7 @@ export class ClientsListComponent implements OnInit, OnDestroy {
                   text: `Usuário removido com sucesso!`,
                 },
               });
-              this.clientsList = this.clientsList.filter(
-                (item) => item.id !== client.id
-              );
+              this.loadClientsList(this.currentPage);
             }
           });
       }

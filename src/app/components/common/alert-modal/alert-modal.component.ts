@@ -16,6 +16,7 @@ export class AlertModalComponent {
   cancel(): void {
     this.dialogRef.close();
   }
+
   confirm(): void {
     this.dialogRef.close(true);
   }

@@ -50,6 +50,7 @@ export class ClientsFormComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
+
     if (id) {
       this.clientService
         .getClientById(id)
@@ -75,8 +76,6 @@ export class ClientsFormComponent implements OnInit, OnDestroy {
           .createClient({ ...this.form.value, id: uuidv4() })
           .pipe(takeUntil(this.$onDestroy))
           .subscribe((createClientResult: Client) => {
-            console.log('createClientResult', createClientResult);
-
             this.infoAndRouteToMainPage();
           });
       } else {
@@ -88,8 +87,6 @@ export class ClientsFormComponent implements OnInit, OnDestroy {
           })
           .pipe(takeUntil(this.$onDestroy))
           .subscribe((updateClientResult: Client) => {
-            console.log('updateClientResult', updateClientResult);
-
             this.infoAndRouteToMainPage();
           });
       }

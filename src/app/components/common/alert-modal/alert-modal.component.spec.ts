@@ -8,10 +8,9 @@ describe('AlertModalComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [AlertModalComponent]
-    })
-    .compileComponents();
-    
+      declarations: [AlertModalComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(AlertModalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
