@@ -32,6 +32,7 @@
       name="cpf"
       id="cpf"
       formControlName="cpf"
+      [mask]="cpfMask"
     />
     <div
       class="error-message"
@@ -76,10 +77,13 @@
     <!-- Renda Mensal -->
     <label for="monthlyIncome">Renda Mensal</label>
     <input
-      type="number"
+      type="text"
       name="monthlyIncome"
       id="monthlyIncome"
       formControlName="monthlyIncome"
+      mask="separator.2"
+      thousandSeparator="."
+      prefix="R$"
     />
     <div
       class="error-message"

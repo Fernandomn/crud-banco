@@ -10,12 +10,13 @@ import {
   MatDialogModule,
 } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ClientsFormComponent } from './components/clients-form/clients-form.component';
 import { ClientsListComponent } from './components/clients-list/clients-list.component';
-import { HeaderComponent } from './components/common/header/header.component';
 import { AlertModalComponent } from './components/common/alert-modal/alert-modal.component';
+import { HeaderComponent } from './components/common/header/header.component';
 
 @NgModule({
   declarations: [
@@ -35,8 +36,11 @@ import { AlertModalComponent } from './components/common/alert-modal/alert-modal
     BrowserAnimationsModule,
     MatButtonModule,
     MatDialogModule,
+    NgxMaskDirective,
+    NgxMaskPipe,
   ],
   providers: [
+    provideNgxMask(),
     { provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: { hasBackdrop: false } },
   ],
   bootstrap: [AppComponent],

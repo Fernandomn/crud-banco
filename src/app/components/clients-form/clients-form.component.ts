@@ -28,7 +28,7 @@ export class ClientsFormComponent implements OnInit, OnDestroy {
     email: '',
     registrationDate: new Date(),
   };
-
+  cpfMask = '000.000.000-00';
   form!: FormGroup;
 
   private $onDestroy = new Subject<boolean>();
