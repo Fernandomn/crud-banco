@@ -4,7 +4,7 @@
   <div class="controllers">
     <div class="filter">
       <div class="input-box">
-        <label class="input-box__label" for="filter">Contrato:</label>
+        <label class="input-box__label" for="filter">Pesquisar:</label>
         <input
           class="input-box__input"
           type="text"
@@ -44,11 +44,11 @@
           <td>
             <a (click)="goToUpdateClient(client)">{{ client.clientName }}</a>
           </td>
-          <td>{{ client.cpf }}</td>
-          <td>{{ client.birthDate }}</td>
-          <td>{{ client.monthlyIncome }}</td>
+          <td>{{ client.cpf | mask : "000.000.000-00" }}</td>
+          <td>{{ client.birthDate | date : "dd/MM/yyyy" }}</td>
+          <td>{{ client.monthlyIncome | currency : "BRL" }}</td>
           <td>{{ client.email }}</td>
-          <td>{{ client.registrationDate }}</td>
+          <td>{{ client.registrationDate | date : "dd/MM/yyyy" }}</td>
           <td>
             <button
               class="button secondary content"

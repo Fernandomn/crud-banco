@@ -48,3 +48,30 @@
     border: none;
   }
 }
+
+.table-wrapper {
+  width: 100%;
+  & table {
+    width: 100%;
+    padding: 0 30px;
+    font-weight: $weight-bold;
+
+    & thead {
+      height: 38px;
+      border-radius: 40px 0px 40px 40px;
+      background: $color-brand-primary-light;
+
+      font-style: normal;
+      font-weight: $weight-bold;
+      color: $color-neutral-white;
+    }
+
+    & tbody {
+      & tr:nth-child(odd) {
+        border-radius: 40px;
+        border: 1px solid $color-neutral-white;
+        background: #f7f7f7;
+      }
+    }
+  }
+}
