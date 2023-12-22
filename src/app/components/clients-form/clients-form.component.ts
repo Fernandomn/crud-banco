@@ -70,7 +70,7 @@ export class ClientsFormComponent implements OnInit, OnDestroy {
 
   saveClient() {
     if (this.form.valid) {
-      if (!this.client.id) {
+      if (this.isCreatingClient) {
         this.clientService
           .createClient({ ...this.form.value, id: uuidv4() })
           .pipe(takeUntil(this.$onDestroy))
@@ -81,7 +81,11 @@ export class ClientsFormComponent implements OnInit, OnDestroy {
           });
       } else {
         this.clientService
-          .editClient({ ...this.form.value, id: this.client.id })
+          .editClient({
+            ...this.form.value,
+            id: this.client.id,
+            cpf: this.form.get('cpf')?.value || this.client.cpf,
+          })
           .pipe(takeUntil(this.$onDestroy))
           .subscribe((updateClientResult: Client) => {
             console.log('updateClientResult', updateClientResult);
@@ -118,7 +122,13 @@ export class ClientsFormComponent implements OnInit, OnDestroy {
           this.form.get('cpf')?.touched,
       },
       {
-        errorMessage: 'CPF deve ter no máximo 11 caracteres',
+        errorMessage: 'CPF deve ter 11 caracteres',
+        shouldDisplayError:
+          this.form.get('cpf')?.errors?.['minLength'] &&
+          this.form.get('cpf')?.touched,
+      },
+      {
+        errorMessage: 'CPF deve ter 11 caracteres',
         shouldDisplayError:
           this.form.get('cpf')?.errors?.['maxlength'] &&
           this.form.get('cpf')?.touched,
@@ -214,10 +224,11 @@ export class ClientsFormComponent implements OnInit, OnDestroy {
         ]),
       ],
       cpf: [
-        { value: this.client.cpf, disabled: !this.isCreatingClient },
+        this.client.cpf,
         Validators.compose([
           Validators.required,
           Validators.maxLength(11),
+          Validators.minLength(11),
           cpfValidator,
         ]),
       ],
@@ -225,7 +236,7 @@ export class ClientsFormComponent implements OnInit, OnDestroy {
         this.client.birthDate,
         Validators.compose([Validators.required, ageValidator]),
       ],
-      monthlyIncome: [this.client.monthlyIncome, Validators.compose([])],
+      monthlyIncome: [this.client.monthlyIncome],
       email: [
         this.client.email,
         Validators.compose([Validators.required, Validators.email]),
@@ -235,5 +246,8 @@ export class ClientsFormComponent implements OnInit, OnDestroy {
         Validators.compose([Validators.required, todayOrPastDateValidator]),
       ],
     });
+    if (!this.isCreatingClient) {
+      this.form.get('cpf')?.disable();
+    }
   }
 }
