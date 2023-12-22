@@ -27,12 +27,26 @@ export class ClientsListComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.loadMoreClients();
+    this.loadClientsList();
   }
 
   ngOnDestroy(): void {
     this.$onDestroy.next(true);
     this.$onDestroy.complete();
+  }
+
+  loadClientsList(): void {
+    this.clientService
+      .listClients({ _page: this.currentPage, filter: this.filter })
+      .pipe(takeUntil(this.$onDestroy))
+      .subscribe({
+        next: (clientsListResult: Client[]) => {
+          console.log('clientsListResult', clientsListResult);
+
+          this.clientsList = [...clientsListResult];
+        },
+        error: (error) => console.error('Loading data error:', error),
+      });
   }
 
   goToUpdateClient(client: Client): void {
@@ -55,6 +69,7 @@ export class ClientsListComponent implements OnInit, OnDestroy {
           .deleteClient(client.id)
           .pipe(takeUntil(this.$onDestroy))
           .subscribe((deleteResult) => {
+            console.log('deleteResult', deleteResult)
             if (deleteResult) {
               this.dialog.open(AlertModalComponent, {
                 data: {
@@ -70,17 +85,5 @@ export class ClientsListComponent implements OnInit, OnDestroy {
           });
       }
     });
-  }
-
-  private loadMoreClients(): void {
-    this.clientService
-      .listClients({ _page: this.currentPage++, filter: this.filter })
-      .pipe(takeUntil(this.$onDestroy))
-      .subscribe({
-        next: (clientsListResult: Client[]) => {
-          this.clientsList = [...clientsListResult];
-        },
-        error: (error) => console.error('Loading data error:', error),
-      });
   }
 }

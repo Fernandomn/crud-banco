@@ -1,6 +1,8 @@
-<h1>CLIENTES</h1>
+<section class="container">
+  <header>
+    <h1>Clientes</h1>
+  </header>
 
-<section class="list-section">
   <div class="controllers">
     <div class="filter">
       <div class="input-box">
@@ -14,7 +16,7 @@
         />
       </div>
 
-      <button class="search-button">
+      <button class="search-button" (click)="loadClientsList()">
         <img src="../../../assets/search.svg" alt="Search" srcset="" />
       </button>
     </div>

@@ -73,14 +73,18 @@ export class ClientsFormComponent implements OnInit, OnDestroy {
         this.clientService
           .createClient({ ...this.form.value, id: uuidv4() })
           .pipe(takeUntil(this.$onDestroy))
-          .subscribe((result) => {
+          .subscribe((createClientResult: Client) => {
+            console.log('createClientResult', createClientResult);
+
             this.infoAndRouteToMainPage();
           });
       } else {
         this.clientService
           .editClient({ ...this.form.value, id: this.client.id })
           .pipe(takeUntil(this.$onDestroy))
-          .subscribe((result) => {
+          .subscribe((updateClientResult: Client) => {
+            console.log('updateClientResult', updateClientResult);
+
             this.infoAndRouteToMainPage();
           });
       }

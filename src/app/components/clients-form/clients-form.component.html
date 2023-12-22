@@ -1,155 +1,160 @@
-<section class="container form-container">
+<section class="container">
   <header>
     <h1>{{ isCreatingClient ? "Criar" : "Atualizar" }} cliente</h1>
   </header>
 
-  <form [formGroup]="form" *ngIf="form">
-    <!-- Nome Cliente -->
-    <label for="clientName">Nome Cliente</label>
-    <input
-      type="text"
-      name="clientName"
-      id="clientName"
-      formControlName="clientName"
-    />
-    <div
-      class="error-message"
-      *ngIf="form.get('clientName')?.errors?.['required'] && form.get('clientName')?.touched"
-    >
-      Nome Cliente é obrigatório
-    </div>
-    <div
-      class="error-message"
-      *ngIf="form.get('clientName')?.errors?.['pattern'] && form.get('clientName')?.touched"
-    >
-      Nome Cliente deve possuir ao menos um sobrenome
-    </div>
+  <app-card>
+    <form [formGroup]="form" *ngIf="form">
+      <!-- Nome Cliente -->
+      <label for="clientName">Nome Cliente</label>
+      <input
+        type="text"
+        name="clientName"
+        id="clientName"
+        formControlName="clientName"
+      />
+      <div
+        class="error-message"
+        *ngIf="form.get('clientName')?.errors?.['required'] && form.get('clientName')?.touched"
+      >
+        Nome Cliente é obrigatório
+      </div>
+      <div
+        class="error-message"
+        *ngIf="form.get('clientName')?.errors?.['pattern'] && form.get('clientName')?.touched"
+      >
+        Nome Cliente deve possuir ao menos um sobrenome
+      </div>
 
-    <!-- CPF -->
-    <label for="cpf">CPF</label>
-    <input
-      type="text"
-      name="cpf"
-      id="cpf"
-      formControlName="cpf"
-      [mask]="cpfMask"
-    />
-    <div
-      class="error-message"
-      *ngIf="form.get('cpf')?.errors?.['required'] && form.get('cpf')?.touched"
-    >
-      CPF é obrigatório
-    </div>
-    <div
-      class="error-message"
-      *ngIf="form.get('cpf')?.errors?.['maxlength'] && form.get('cpf')?.touched"
-    >
-      CPF deve ter no máximo 11 caracteres
-    </div>
-    <div
-      class="error-message"
-      *ngIf="form.get('cpf')?.errors?.['invalidCpf'] && form.get('cpf')?.touched"
-    >
-      CPF está em formato inválido
-    </div>
+      <!-- CPF -->
+      <label for="cpf">CPF</label>
+      <input
+        type="text"
+        name="cpf"
+        id="cpf"
+        formControlName="cpf"
+        [mask]="cpfMask"
+      />
+      <div
+        class="error-message"
+        *ngIf="form.get('cpf')?.errors?.['required'] && form.get('cpf')?.touched"
+      >
+        CPF é obrigatório
+      </div>
+      <div
+        class="error-message"
+        *ngIf="form.get('cpf')?.errors?.['maxlength'] && form.get('cpf')?.touched"
+      >
+        CPF deve ter no máximo 11 caracteres
+      </div>
+      <div
+        class="error-message"
+        *ngIf="form.get('cpf')?.errors?.['invalidCpf'] && form.get('cpf')?.touched"
+      >
+        CPF está em formato inválido
+      </div>
 
-    <!-- Data Nascimento -->
-    <label for="birthDate">Data Nascimento</label>
-    <input
-      type="date"
-      name="birthDate"
-      id="birthDate"
-      formControlName="birthDate"
-    />
-    <div
-      class="error-message"
-      *ngIf="form.get('birthDate')?.errors?.[ 'required'] && form.get('birthDate')?.touched"
-    >
-      Data Nascimento é obrigatória
-    </div>
-    <div
-      class="error-message"
-      *ngIf="form.get('birthDate')?.errors?.[ 'invalidAge'] && form.get('birthDate')?.touched"
-    >
-      O Cliente deve ter mais de 18 anos, e menos de 60
-    </div>
+      <!-- Data Nascimento -->
+      <label for="birthDate">Data Nascimento</label>
+      <input
+        type="date"
+        name="birthDate"
+        id="birthDate"
+        formControlName="birthDate"
+      />
+      <div
+        class="error-message"
+        *ngIf="form.get('birthDate')?.errors?.[ 'required'] && form.get('birthDate')?.touched"
+      >
+        Data Nascimento é obrigatória
+      </div>
+      <div
+        class="error-message"
+        *ngIf="form.get('birthDate')?.errors?.[ 'invalidAge'] && form.get('birthDate')?.touched"
+      >
+        O Cliente deve ter mais de 18 anos, e menos de 60
+      </div>
 
-    <!-- Renda Mensal -->
-    <label for="monthlyIncome">Renda Mensal</label>
-    <input
-      type="text"
-      name="monthlyIncome"
-      id="monthlyIncome"
-      formControlName="monthlyIncome"
-      mask="separator.2"
-      thousandSeparator="."
-      prefix="R$"
-    />
-    <div
-      class="error-message"
-      *ngIf="
-        form.get('monthlyIncome')?.errors && form.get('monthlyIncome')?.touched
-      "
-    >
-      Renda Mensal é obrigatória
-    </div>
+      <!-- Renda Mensal -->
+      <label for="monthlyIncome">Renda Mensal</label>
+      <input
+        type="text"
+        name="monthlyIncome"
+        id="monthlyIncome"
+        formControlName="monthlyIncome"
+        mask="separator.2"
+        thousandSeparator="."
+        prefix="R$"
+      />
+      <div
+        class="error-message"
+        *ngIf="
+          form.get('monthlyIncome')?.errors &&
+          form.get('monthlyIncome')?.touched
+        "
+      >
+        Renda Mensal é obrigatória
+      </div>
 
-    <!-- E-mail -->
-    <label for="email">E-mail</label>
-    <input type="email" name="email" id="email" formControlName="email" />
-    <div
-      class="error-message"
-      *ngIf="
+      <!-- E-mail -->
+      <label for="email">E-mail</label>
+      <input type="email" name="email" id="email" formControlName="email" />
+      <div
+        class="error-message"
+        *ngIf="
         form.get('email')?.errors?.['required'] && form.get('email')?.touched
       "
-    >
-      E-mail é obrigatório
-    </div>
-    <div
-      class="error-message"
-      *ngIf="
+      >
+        E-mail é obrigatório
+      </div>
+      <div
+        class="error-message"
+        *ngIf="
         form.get('email')?.errors?.['email'] && form.get('email')?.touched
       "
-    >
-      Formato de e-mail incorreto
-    </div>
+      >
+        Formato de e-mail incorreto
+      </div>
 
-    <!-- Data Cadastro -->
-    <label for="registrationDate">Data Cadastro</label>
-    <input
-      type="date"
-      name="registrationDate"
-      id="registrationDate"
-      formControlName="registrationDate"
-    />
-    <div
-      class="error-message"
-      *ngIf="
+      <!-- Data Cadastro -->
+      <label for="registrationDate">Data Cadastro</label>
+      <input
+        type="date"
+        name="registrationDate"
+        id="registrationDate"
+        formControlName="registrationDate"
+      />
+      <div
+        class="error-message"
+        *ngIf="
         form.get('registrationDate')?.errors?.['required'] &&
         form.get('registrationDate')?.touched
       "
-    >
-      Data Cadastro é obrigatória
-    </div>
-    <div
-      class="error-message"
-      *ngIf="
+      >
+        Data Cadastro é obrigatória
+      </div>
+      <div
+        class="error-message"
+        *ngIf="
         form.get('registrationDate')?.errors?.['futureDate'] &&
         form.get('registrationDate')?.touched
       "
-    >
-      Data Cadastro deve ser a data de hoje, ou anterior
-    </div>
-  </form>
+      >
+        Data Cadastro deve ser a data de hoje, ou anterior
+      </div>
 
-  <div class="form__buttons">
-    <button class="button secondary columns" routerLink="/">Cancelar</button>
-    <button
-      class="button primary columns"
-      [disabled]="form && (!form.valid || !form.touched)"
-      (click)="saveClient()"
-    >
-      {{ isCreatingClient ? "Criar" : "Atualizar" }}
-    </button>
-  </div>
+      <div class="form__buttons">
+        <button class="button secondary columns" routerLink="/">
+          Cancelar
+        </button>
+        <button
+          class="button primary columns"
+          [disabled]="form && (!form.valid || !form.touched)"
+          (click)="saveClient()"
+        >
+          {{ isCreatingClient ? "Criar" : "Atualizar" }}
+        </button>
+      </div>
+    </form>
+  </app-card>
 </section>
