@@ -17,6 +17,7 @@ import { ClientsFormComponent } from './components/clients-form/clients-form.com
 import { ClientsListComponent } from './components/clients-list/clients-list.component';
 import { AlertModalComponent } from './components/common/alert-modal/alert-modal.component';
 import { HeaderComponent } from './components/common/header/header.component';
+import { CardComponent } from './components/common/card/card.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { HeaderComponent } from './components/common/header/header.component';
     ClientsFormComponent,
     HeaderComponent,
     AlertModalComponent,
+    CardComponent,
   ],
   imports: [
     BrowserModule,
