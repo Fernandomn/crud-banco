@@ -53,10 +53,13 @@
   display: flex;
   flex-direction: column;
   align-items: end;
+  overflow-x: auto;
 
   & table {
     width: 100%;
     font-weight: $weight-bold;
+    white-space: nowrap;
+    border-collapse: collapse;
 
     tr {
       th,
